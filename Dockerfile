@@ -1,6 +1,7 @@
 FROM alpine:edge
 
-RUN apk --update --no-cache add \
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
+    && apk --update --no-cache add \
       xrdp \
       xvfb \
       alpine-desktop \
