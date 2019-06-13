@@ -5,7 +5,9 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/reposi
       xrdp \
       xvfb \
       alpine-desktop \
-      openbox \
+      xfce4 \
+      thunar-volman \
+      faenza-icon-theme \
       slim \
       xf86-input-synaptics \
       xf86-input-mouse \
