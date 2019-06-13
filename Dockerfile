@@ -23,7 +23,7 @@ RUN apk --update --no-cache add \
       ossp-uuid \
       x11vnc \
       openssh \
-      firtefox
+      firefox
 COPY root /
 
 RUN xrdp-keygen xrdp auto \
