@@ -28,6 +28,8 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main/" >> /etc/apk/repositor
          openssh \
          sed \
          firefox \
+         xterm \
+         pm-utils \
     && xrdp-keygen xrdp auto \
     && sed -i '/TerminalServerUsers/d' /etc/xrdp/sesman.ini \
     && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini
