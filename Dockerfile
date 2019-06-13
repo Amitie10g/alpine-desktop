@@ -22,22 +22,19 @@ RUN apk --update --no-cache add \
       nano \
       ossp-uuid \
       x11vnc \
-      openssh
+      openssh \
+      firtefox
 COPY root /
 
-RUN 
-xrdp-keygen xrdp auto \
+RUN xrdp-keygen xrdp auto \
     && sed -i '/TerminalServerUsers/d' /etc/xrdp/sesman.ini \
     && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini
-
-
-RUN addgroup alpine \
-     && adduser  -G alpine -s /bin/sh -D alpine \&& echo "alpine:alpine" | /usr/sbin/chpasswd \&& echo "alpine    ALL=(ALL) ALL" >> /etc/sudoers
-
-
+    && addgroup alpine \
+    && adduser  -G alpine -s /bin/sh -D alpine \
+    && echo "alpine:alpine" | /usr/sbin/chpasswd \
+    && echo "alpine    ALL=(ALL) ALL" >> /etc/sudoers
 
 EXPOSE 3389 22
 #WORKDIR /home/alpine
 #USER alpine xrdp
-ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
