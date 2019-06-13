@@ -26,15 +26,15 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/reposi
       x11vnc \
       openssh \
       firefox
-COPY root /
-
-RUN xrdp-keygen xrdp auto \
+    && xrdp-keygen xrdp auto \
     && sed -i '/TerminalServerUsers/d' /etc/xrdp/sesman.ini \
     && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini \
     && addgroup alpine \
     && adduser  -G alpine -s /bin/sh -D alpine \
     && echo "alpine:alpine" | /usr/sbin/chpasswd \
     && echo "alpine    ALL=(ALL) ALL" >> /etc/sudoers
+
+COPY root /
 
 EXPOSE 3389 22
 #WORKDIR /home/alpine
