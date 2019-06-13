@@ -28,7 +28,7 @@ COPY root /
 
 RUN xrdp-keygen xrdp auto \
     && sed -i '/TerminalServerUsers/d' /etc/xrdp/sesman.ini \
-    && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini
+    && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini \
     && addgroup alpine \
     && adduser  -G alpine -s /bin/sh -D alpine \
     && echo "alpine:alpine" | /usr/sbin/chpasswd \
