@@ -1,4 +1,4 @@
 #!/bin/sh
 chown -R abc:abc /config
 
-s6-setuidgid abc dbus-launch /usr/bin/xfce4-session --display=:1
+env HOME=/config s6-setuidgid abc dbus-launch /usr/bin/xfce4-session --display=:1
