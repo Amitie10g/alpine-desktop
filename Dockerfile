@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM lsiobase/alpine:3.9
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
     apk --update --no-cache add \
@@ -29,10 +29,6 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/reposi
     && xrdp-keygen xrdp auto \
     && sed -i '/TerminalServerUsers/d' /etc/xrdp/sesman.ini \
     && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini \
-    && addgroup alpine \
-    && adduser  -G alpine -s /bin/sh -D alpine \
-    && echo "alpine:alpine" | /usr/sbin/chpasswd \
-    && echo "alpine    ALL=(ALL) ALL" >> /etc/sudoers
 
 COPY root /
 
