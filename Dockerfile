@@ -5,10 +5,9 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/reposi
       xrdp \
       xvfb \
       alpine-desktop \
-      xfce4 \
-      thunar-volman \
-      faenza-icon-theme \
-      slim xf86-input-synaptics \
+      openbox \
+      slim \
+      xf86-input-synaptics \
       xf86-input-mouse \
       xf86-input-keyboard \
       setxkbmap \
