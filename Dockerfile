@@ -25,7 +25,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/reposi
       ossp-uuid \
       x11vnc \
       openssh \
-      firefox
+      firefox \
     && xrdp-keygen xrdp auto \
     && sed -i '/TerminalServerUsers/d' /etc/xrdp/sesman.ini \
     && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini \
