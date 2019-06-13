@@ -28,7 +28,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/reposi
       firefox \
     && xrdp-keygen xrdp auto \
     && sed -i '/TerminalServerUsers/d' /etc/xrdp/sesman.ini \
-    && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini \
+    && sed -i '/TerminalServerAdmins/d' /etc/xrdp/sesman.ini
 
 COPY root /
 
