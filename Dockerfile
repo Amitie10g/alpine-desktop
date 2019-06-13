@@ -3,11 +3,11 @@ FROM alpine:edge
 RUN apk --update --no-cache add \
       xrdp \
       xvfb \
-      alpine-desktop 
+      alpine-desktop \
       xfce4 \
       thunar-volman \
       faenza-icon-theme \
-      slim xf86-input-synaptics 
+      slim xf86-input-synaptics \
       xf86-input-mouse \
       xf86-input-keyboard \
       setxkbmap \
