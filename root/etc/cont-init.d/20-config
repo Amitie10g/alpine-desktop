@@ -27,3 +27,5 @@ uuidgen > /etc/machine-id
 echo "export QT_XKB_CONFIG_ROOT=/usr/share/X11/locale" >> /etc/profile
 # set keyboard for direct command use
 echo "QT_XKB_CONFIG_ROOT=/usr/share/X11/locale" >> /config/.ssh/environment
+
+chown -R abc:abc /config
