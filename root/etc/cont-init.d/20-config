@@ -1,4 +1,6 @@
 #!/bin/sh
 chown -R abc:abc /config
 
+echo -e "abc\nabc" | passwd abc &> /dev/null
+
 env HOME=/config s6-setuidgid abc dbus-launch /usr/bin/xfce4-session --display=:1
